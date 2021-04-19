@@ -1,0 +1,73 @@
+
+
+.dialogs_main{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.dialog{
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 22px;
+    font-weight: bold;
+     margin: 10px 0;
+     padding-left: 10px;
+}
+
+
+.dialog .active{
+    color: gold;
+}
+
+
+.dialog_item{ 
+    width: 30%;
+    background-color: rgba(218, 228, 238, 0.747);
+    border-radius: 10px;
+    border: 5px solid rgb(60, 60, 224);
+    
+}
+.dialog_item img{
+    width: 30px;
+    border-radius: 15px;
+    margin-right: 5px;
+}
+
+.messeges{
+    width: 70%;
+    margin-left: 10px;
+    background-color: rgba(218, 228, 238, 0.747); 
+     border-radius: 16px;
+     border: 5px solid rgb(60, 60, 224);
+ }
+ 
+ 
+ .messege{
+     margin: 10px 0;
+     padding-left: 50px;
+ }
+
+ .SendMessagesBlock{
+     margin-top: 320px;
+    background-color: rgb(60, 60, 224);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+ }
+
+ .messageText{
+    margin-top: 20px;
+    padding-top: 20px;  
+ }
+
+ .messageText textarea{
+     width: 95%;
+     height: 100px;
+     margin: 0 10px;
+ }
+
+ .sendMessage{
+     margin: 0 10px;
+     width: 70px;
+     height: 35px;
+ }

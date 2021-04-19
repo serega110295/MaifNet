@@ -1,0 +1,17 @@
+.postsBlock{
+    padding: 10px;
+}
+
+.postsBlock textarea {
+    width: 100%;
+}
+
+.postsBlock button {
+    width: 150px;
+    font-size: 18px;
+}
+
+.posts{
+    margin: 15px;
+    font-size: 17px;
+}

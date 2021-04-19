@@ -1,0 +1,29 @@
+.nav{
+  grid-area: n;
+  margin: 5px;
+  padding: 10px;
+  
+  background-color: rgb(60, 60, 224);
+  border-radius: 10px;
+}
+.item{
+  font-size: 20px;
+  margin-top: 15px;
+  font-weight: bold;
+  padding: 10px;
+}
+.item.setings{
+  margin: 50px 0;
+}
+.item a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.item:hover{
+  background-color: rgb(36, 3, 180);
+  border-radius: 10px;
+}
+
+
+
+/**/
