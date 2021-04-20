@@ -1,8 +1,7 @@
-let ADD_POST = 'ADD-POST';
-let NEW_POST_TEXT = 'NEW-POST-TEXT';
+import DialogReducer from "./dialog-reducer";
+import ProfileReducer from "./profile-reducer";
+import SideBarReducer from "./sidebar-reducer";
 
-let NEW_MESSAGE = 'NEW-MESSAGE'
-let UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'
 
 let store = {
   getState() {
@@ -22,7 +21,7 @@ let store = {
 
     dialogsPage: {
 
-      newMessageText : '',
+      newMessageText: '',
 
       dialogData: [
         { 'id': 1, 'name': 'Валентин', },
@@ -59,57 +58,15 @@ let store = {
 
 
   dispatch(action) {
-    if (action.type === ADD_POST) {
-      let post = {
-        id: 5,
-        message: this._state.profilePage.newPostText,
-        like: 0
-      }
-      this._state.profilePage.postData.push(post)
-      this._state.profilePage.newPostText = ''
-      this._callbackSubscriber(this._state)
-    }
-    else if (action.type === NEW_POST_TEXT) {
-      this._state.profilePage.newPostText = action.newText
-      this._callbackSubscriber(this._state)
-    }
-    else if (action.type === NEW_MESSAGE){
-      let message = {'id': 4, 'messege': this._state.dialogsPage.newMessageText}
-      this._state.dialogsPage.messagesData.push(message)
-      this._state.dialogsPage.newMessageText = ''
-      this._callbackSubscriber(this._state)
-    }
-    else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-      this._state.dialogsPage.newMessageText = action.messageText
-      this._callbackSubscriber(this._state)
-    }
-  },
 
+    this._state.profilePage = ProfileReducer(this._state.profilePage, action)
+    this._state.dialogsPage = DialogReducer(this._state.dialogsPage, action)
+    this._state.sidebar = SideBarReducer(this._state.sidebar, action)
 
-}
-
-
-
-export const addPostActionCreator = () => {
-  return {
-    type: ADD_POST
+    this._callbackSubscriber(this._state)
   }
 }
-export const updateActionCreator = (text) => {
-  return { type: NEW_POST_TEXT, newText: text }
-}
 
-
-
-export const addMessageActionCreator = () =>{
-  return {
-    type: NEW_MESSAGE
-  }
-}
-export const updateNewMessageACreator = (text) => {
-  return{
-    type: UPDATE_NEW_MESSAGE_TEXT, messageText: text }
-}
 
 
 export default store;
