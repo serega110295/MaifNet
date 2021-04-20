@@ -1,7 +1,17 @@
 let ADD_POST = 'ADD-POST';
 let NEW_POST_TEXT = 'NEW-POST-TEXT';
 
-const ProfileReducer = (state, action) => {
+let initialState = {
+
+    newPostText: '',
+    postData: [
+      { id: 1, message: "Hi World", like: 10 },
+      { id: 2, message: "Its my first post", like: 22 }
+    ],
+
+  }
+
+const ProfileReducer = (state = initialState, action) => {
 
     switch (action.type) {
 

@@ -1,4 +1,13 @@
-const SideBarReducer = (state , action) => {
+let initialState = {
+    navdata: [
+      { 'url': '/Profile', 'name': 'Профиль' },
+      { 'url': '/Dialogs', 'name': 'Сообщения' },
+      { 'url': '/News', 'name': 'Новости' },
+      { 'url': '/Music', 'name': 'Музыка' },
+    ]
+  }
+
+const SideBarReducer = (state = initialState , action) => {
 
 
 

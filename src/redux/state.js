@@ -48,12 +48,12 @@ let store = {
 
 
   },
-  _callbackSubscriber() {
+  _callSubscriber() {
     console.log('State changed')
   },
 
-  obscribe(observer) {
-    this._callbackSubscriber = observer
+  subscribe(observer) {
+    this._callSubscriber = observer
   },
 
 
@@ -63,7 +63,7 @@ let store = {
     this._state.dialogsPage = DialogReducer(this._state.dialogsPage, action)
     this._state.sidebar = SideBarReducer(this._state.sidebar, action)
 
-    this._callbackSubscriber(this._state)
+    this._callSubscriber(this._state)
   }
 }
 

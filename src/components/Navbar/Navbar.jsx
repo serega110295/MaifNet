@@ -4,6 +4,8 @@ import Friends from './Friends/Friends';
 import s from './Navbar.module.css'
 const Navbar = (props) => {
 
+  
+
   let sideBarElement = props.sidebar.navdata.map(p => <div className={s.item}>
     <NavLink to={p.url}>{p.name}</NavLink>
   </div>);

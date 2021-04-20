@@ -7,7 +7,6 @@ import {addMessageActionCreator, updateNewMessageACreator } from '../../redux/di
 
 
 const Dialogs = (props) => {
-    debugger
 
     let dialogElement = props.state.dialogData.map(d => <DialogItem name={d.name} id={d.id} />);
     let messegeElement = props.state.messagesData.map(m => <Messege messege={m.messege} />);
