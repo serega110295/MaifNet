@@ -1,6 +1,9 @@
 let ADD_POST = 'ADD-POST';
 let NEW_POST_TEXT = 'NEW-POST-TEXT';
 
+let NEW_MESSAGE = 'NEW-MESSAGE'
+let UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'
+
 let store = {
   getState() {
     return this._state
@@ -18,6 +21,9 @@ let store = {
     },
 
     dialogsPage: {
+
+      newMessageText : '',
+
       dialogData: [
         { 'id': 1, 'name': 'Валентин', },
         { 'id': 2, 'name': 'Аедрей', },
@@ -67,6 +73,16 @@ let store = {
       this._state.profilePage.newPostText = action.newText
       this._callbackSubscriber(this._state)
     }
+    else if (action.type === NEW_MESSAGE){
+      let message = {'id': 4, 'messege': this._state.dialogsPage.newMessageText}
+      this._state.dialogsPage.messagesData.push(message)
+      this._state.dialogsPage.newMessageText = ''
+      this._callbackSubscriber(this._state)
+    }
+    else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
+      this._state.dialogsPage.newMessageText = action.messageText
+      this._callbackSubscriber(this._state)
+    }
   },
 
 
@@ -79,10 +95,21 @@ export const addPostActionCreator = () => {
     type: ADD_POST
   }
 }
-
-
 export const updateActionCreator = (text) => {
   return { type: NEW_POST_TEXT, newText: text }
 }
+
+
+
+export const addMessageActionCreator = () =>{
+  return {
+    type: NEW_MESSAGE
+  }
+}
+export const updateNewMessageACreator = (text) => {
+  return{
+    type: UPDATE_NEW_MESSAGE_TEXT, messageText: text }
+}
+
 
 export default store;
