@@ -12,7 +12,7 @@ import store from './redux/redux-store'
 let rerender = (state) => {
       ReactDOM.render(
             <BrowserRouter>
-                  <App state={state} dispatch = {store.dispatch.bind(store)} />
+                  <App state={state} dispatch={store.dispatch.bind(store)} store={store} />
             </BrowserRouter>
             , document.getElementById('root')
       );
@@ -22,7 +22,7 @@ let rerender = (state) => {
 
 rerender(store.getState())
 
-store.subscribe(()=>{
+store.subscribe(() => {
       let state = store.getState()
       rerender(state)
 })
