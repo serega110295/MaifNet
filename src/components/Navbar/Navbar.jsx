@@ -2,9 +2,12 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Friends from './Friends/Friends';
 import s from './Navbar.module.css'
+
+
+
 const Navbar = (props) => {
 
-  
+  debugger
 
   let sideBarElement = props.sidebar.navdata.map(p => <div className={s.item}>
     <NavLink to={p.url}>{p.name}</NavLink>

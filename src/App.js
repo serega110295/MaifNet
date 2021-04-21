@@ -5,26 +5,25 @@ import DialogsContainer from './components/Dialogs/DialogsContainer';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
+import StoreContext from './contextStore';
 
 
 const App = (props) => {
-  debugger
+  
   
   
   return (
 
     <div className='app-wrapper'>
       <Header />
-      <Navbar sidebar={props.state.sidebar} />
+      <Navbar sidebar = {props.state.sidebar} />
       <div className='app-wrapper-content'>
+        <StoreContext.Provider value = {props.store}>
         <Route path='/Dialogs'
-          render={() => <DialogsContainer
-            store = {props.store}
-          />} />
+          render={() => <DialogsContainer />} />
         <Route path='/Profile'
-          render={() => <Profile
-            store = {props.store}
-          />} />
+          render={() => <Profile />} />
+          </StoreContext.Provider>
 
 
       </div>
