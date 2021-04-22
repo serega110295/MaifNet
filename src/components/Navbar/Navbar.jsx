@@ -7,9 +7,7 @@ import s from './Navbar.module.css'
 
 const Navbar = (props) => {
 
-  debugger
-
-  let sideBarElement = props.sidebar.navdata.map(p => <div className={s.item}>
+  let sideBarElement = props.navdata.map(p => <div className={s.item}>
     <NavLink to={p.url}>{p.name}</NavLink>
   </div>);
 
