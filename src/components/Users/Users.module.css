@@ -43,6 +43,27 @@
 }
 
 
+.followButtonDelete {
+	background:linear-gradient(to bottom, #ff0000 5%, #eb1d4d 100%);
+	background-color:#ff0000;
+	border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+    width: 100%;
+	text-decoration:none;
+}
+.followButtonDelete:hover {
+	background:linear-gradient(to bottom, #eb1d4d 5%, #ff0000 100%);
+	background-color:#eb1d4d;
+}
+.followButtonDelete:active {
+	position:relative;
+	top:1px;
+}
+
+
 .infoBlock{
     width: 80%;
     padding: 10px;

@@ -5,12 +5,13 @@ import userPhoto from '../../assets/images/user.png'
 
 class Users extends React.Component {
 
-    constructor(props) {
-        super(props);
+    componentDidMount() {
         
+       if (this.props.users.length === 0){
         axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
             this.props.setUser(response.data.items)
-        })
+       })
+        }
 
     }
 
@@ -26,7 +27,7 @@ class Users extends React.Component {
                                 </div>
                                 <div>
                                     {u.followed
-                                        ? <button onClick={() => { this.props.unfollow(u.id) }} className={s.followButton}>Удалить</button>
+                                        ? <button onClick={() => { this.props.unfollow(u.id) }} className={s.followButtonDelete}>Удалить</button>
                                         : <button onClick={() => { this.props.follow(u.id) }} className={s.followButton}>Добавить</button>}
 
                                 </div>
