@@ -28,7 +28,7 @@ class UsersContainers extends React.Component {
             { headers: { "API-KEY": 'a47def70-2b24-4389-b27d-2a1be15443f3' } }).then(response => {
                 this.props.setUser(response.data.items)
                 this.props.isFetchingPreloader(false)
-                //this.props.setUserTotalCount(response.data.totalCount)
+                this.props.setUserTotalCount(response.data.totalCount)
 
             })
     }
