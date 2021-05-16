@@ -2,6 +2,9 @@
   grid-area: h; ; 
   background-color: rgb(60, 60, 224);
   border-radius: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 .header img {
   width: 65px;
@@ -12,3 +15,15 @@
   padding-left: 70px;
   font-size: 1.2em;
 }
+
+.login__block {
+  margin: 10px 20px 0 0;
+}
+
+.login__block a {
+  font-size: 1.2em;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
